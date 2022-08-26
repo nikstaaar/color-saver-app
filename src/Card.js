@@ -23,18 +23,26 @@ export default function Card () {
     
     return ( 
     <>
-    <input placeholder = "#ffffff" ></input>
-    <button onClick = { () => {
-        setColor([...colors, {
-        id:4,
-        color: "pink",
-        hexCode: "#ffc0cb"
-        }])
-    }
-    }>submit</button>
+        
+
+    <form onSubmit={(event) => {
+        // event.target
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const formValues = Object.fromEntries(formData);
+       setColor([...colors, {
+            id: formValues.colorCode,
+            color: "black",
+            hexCode: formValues.colorCode}]);
+}}
+> 
+    <input type = "text" placeholder = "#ffffff" name = "colorCode"></input>
+    <button type = "submit">submit</button> 
+    </form>
+    
     <ul>
     {colors.map ((color) => {return (
-    <li key = {color.id}>
+    <li key = {color.hexCode}>
     <div className = "Card" style={{ border: "5px solid " + color.hexCode }}>{color.hexCode} is this color: {color.color}</div> 
     </li>)
 })}
