@@ -1,10 +1,12 @@
+import Card from "./Card"
 
 
 function App() {
   return (
-    <div>
-      Hello World
-    </div>
+    <>
+    
+    <Card></Card>
+    </>
   );
 }
 
