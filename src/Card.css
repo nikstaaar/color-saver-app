@@ -1,5 +1,19 @@
-.Card{
+.Card {
     width: 10em;
     height: 5em;
+    margin: 1em;
+  }
+  
+  .Card:active {
+    border: 0.1em white solid;
+  }
+  
+  .code-box {
+    background-color: white;
+    width: 5em;
+  }
+  
+  .card-list {
     list-style-type: none;
-}
+  }
+  
